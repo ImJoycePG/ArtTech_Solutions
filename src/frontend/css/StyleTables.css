@@ -1,0 +1,28 @@
+:root {
+    ---color_50: #ecefff;
+    ---color_100: #dde2ff;
+    ---color_200: #c2c9ff;
+    ---color_300: #9da5ff;
+    ---color_400: #7576ff;
+    ---color_500: #6155ff;
+    ---color_600: #5237f4;
+    ---color_700: #5439db;
+    ---color_800: #3a25ae;
+    ---color_900: #322689;
+    ---color_950: #1f1650;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    content: '';
+}
+
+header {
+    margin-bottom: 20px;
+}
+

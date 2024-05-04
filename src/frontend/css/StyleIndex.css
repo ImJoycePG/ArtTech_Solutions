@@ -1,0 +1,88 @@
+:root {
+    ---color_50: #ecefff;
+    ---color_100: #dde2ff;
+    ---color_200: #c2c9ff;
+    ---color_300: #9da5ff;
+    ---color_400: #7576ff;
+    ---color_500: #6155ff;
+    ---color_600: #5237f4;
+    ---color_700: #5439db;
+    ---color_800: #3a25ae;
+    ---color_900: #322689;
+    ---color_950: #1f1650;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    content: '';
+    overflow-y: hidden;
+}
+
+.containerBody {
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+    height: 100vh;
+}
+
+.containerLeft {
+    display: flex;
+    align-items: center;
+
+    flex: 1;
+    width: 100%;
+
+    background-color: var(---color_900);
+}
+
+.containerForms {
+    margin: auto;
+    width: 60%;
+}
+
+.containerForms h1 {
+    color: var(---color_100);
+    font-size: 55px;
+    font-family: 'Times New Roman';
+    font-weight: bold;
+}
+
+.containerForms p {
+    color: var(---color_200);
+    font-size: 20px;
+}
+
+.formLogin {
+    width: 85%;
+    color: var(---color_950);
+}
+
+.formLogin a {
+    color: var(---color_300);
+}
+
+.formButtons {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.btn {
+    background-color: var(---color_500) !important;
+    color: var(---color_100);
+}
+
+.containerRight {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.containerRight iframe {
+    height: 100%;
+}
