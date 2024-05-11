@@ -65,6 +65,7 @@
                                         <th>Costo</th>
                                         <th>Tipo</th>
                                         <th>Categoria</th>
+                                        <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody id="dataRow">
@@ -91,6 +92,13 @@
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('dataRow').innerHTML = data;
+                    const btnsEditar = document.querySelectorAll('.btn-editar');
+                    btnsEditar.forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            const productId = this.getAttribute('data-producto-id');
+                            window.location.href = './form/producto.html?productId=' + productId;
+                        });
+                    });
                 })
                 .catch(error => {
                     console.error('Error al refrescar la tabla:', error);

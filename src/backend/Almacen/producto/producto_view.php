@@ -27,6 +27,7 @@ if($result->num_rows > 0){
         echo '<td>' . $row['productCost'] . '</td>';
         echo '<td>' . $row['productType'] . '</td>';
         echo '<td>' . $row['productCategory'] . '</td>';
+        echo '<td><button class="btn btn-primary btn-editar" data-producto-id="' . $row['productId'] . '">Editar</button></td>';
         echo '</tr>';
     }
     

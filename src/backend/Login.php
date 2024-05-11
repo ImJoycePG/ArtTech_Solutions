@@ -7,6 +7,14 @@ $response = array();
 if($_SERVER['REQUEST_METHOD'] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
+    if(empty($username) || empty($password)) {
+        $response['success'] = false;
+        $response['message'] = 'Tienes que completar los campos para continuar.';
+
+        header('Content-Type: application/json');
+        echo json_encode($response);
+        return;
+    }
 
     $v_sql = "
         SELECT

@@ -1,45 +1,36 @@
 <!DOCTYPE html>
-<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./src/frontend/css/StyleLogin.css" rel="stylesheet">
     <link href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" rel="stylesheet">
-    <link href="./src/frontend/css/StyleIndex.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <title>Iniciar sesion | StockControl</title>
+    <title>Iniciar Sesión | ArtTech Solutions</title>
 </head>
 <body>
-    <div class="containerBody">
-        <div class="containerLeft">
-            <div class="containerForms">
-                <h1>Iniciar Sesión</h1>
-                <p>Ingresa tus credenciales</p>
-
-                <form class="formLogin form-floating" method="post" id="loginForm">
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control btnForms" id="floatingInputUser" placeholder="username" name="username">
-                        <label for="floatingInputUser" class="labelForms">Usuario</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="password" class="form-control btnForms" id="floatingInputPass" placeholder="password" name="password">
-                        <label for="floatingInputPass" class="labelForms">Contraseña</label>
-                    </div>
-                    <a href="#">¿Olvidaste tu contraseña?</a>
+    <div class="containerBody w-full h-full flex flex-col lg:flex-row lg:h-screen">
+        <div class="containerLeft w-auto">
+            <div class="containerLeftAll m-2.5 lg:mx-14 lg:my-auto lg:w-auto lg:h-auto">
+                <div class="containerTitle mt-2.5 mb-3.5">
+                    <img src="./src/frontend/images/LogoMain.webp" alt="LogoMain" class="cursor-not-allowed w-48 m-auto md:w-80 select-none animate__animated animate__slideInDown animate__slow">
+                    <h1 class="mb-1 text-3xl tracking-wide select-none md:text-5xl lg:text-4xl">Iniciar Sesión</h1>
+                </div>
+                <form class="containerForm flex flex-col" id="loginForm"> 
+                    <input type="text" id="text_input_username" class="textInput p-2.5 h-12 my-1.5 cursor-text md:h-16 md:text-xl lg:h-14" placeholder="Usuario" maxlength="20" minlength="3" name="username"/>
+                    <input type="password" id="pass_input_password" class="textInput p-2.5 h-12 my-1.5 cursor-text md:h-16 md:text-xl lg:h-14" placeholder="Contraseña" name="password"/>
                     
-                    <div class="formButtons">
-                        <button type="submit" class="btn btn-success btn-lg">Ingresar</button>
-                    </div>
+                    <button type="sumbit" id="button_login" class="normalButton h-10 rounded-lg my-5 font-semibold cursor-pointer md:h-16 md:text-2xl lg:h-12">Iniciar Sesión</button>
                 </form>
             </div>
         </div>
-
-        <div class="containerRight">
-            <iframe src='https://my.spline.design/miniroomcopy-c6a812f782098aeab03d98274713182c/' frameborder='0' width='100%'></iframe>
-            
+        
+        <div class="containerRight hidden lg:flex lg:flex-1 lg:h-auto lg:w-3/4 xl:w-3/4 2xl:w-3/4 bg-cover bg-no-repeat bg-center">
+            <img src="./src/frontend/images/LogoRight.webp" alt="LogoRight" class="lg:m-auto lg:w-3/5 lg:h-auto lg:rounded-3xl">
         </div>
     </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('loginForm').addEventListener('submit', function(event) {
@@ -47,7 +38,7 @@
 
                 var formData = new FormData(this);
 
-                fetch('./src/backend/Login.php', {
+                fetch('./src/backend/login.php', {
                     method: 'POST',
                     body: formData
                 })
@@ -76,8 +67,5 @@
             })
         })
     </script>
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.2.5/build/spline-viewer.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </body>
 </html>
